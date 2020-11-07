@@ -1,0 +1,22 @@
+This is a text that just holds some information about some variable names in DDragon or any thing else:
+ DDragon information
+'hp'
+'hpperlevel'
+ mp'
+'mpperlevel'
+'movespeed'
+'armor'
+'armorperlevel'
+'spellblock'
+'spellblockperlevel'
+'attackrange'
+'hpregen'
+'hpregenperlevel'
+'mpregen': 
+'mpregenperlevel'
+'crit'
+'critperlevel':
+'attackdamage'
+'attackdamageperlevel'
+'attackspeedperlevel'
+'attackspeed'
