@@ -13,7 +13,8 @@
             "console": "externalTerminal",
             //"args" : ["Tristana"]
             //"args" : ["Cassiopeia"]
+            //"args" : ["Sett", "Black Cleaver", "Trinity Force", "Iceborn Gauntlet", "Rapid Firecannon", "Spirit Visage", "Liandry's Torment", "Morellonomicon", "Serrated Dirk"]
             "args" : ["Sett", "Black Cleaver", "Trinity Force"]
-        }
+         }
     ]
 }
