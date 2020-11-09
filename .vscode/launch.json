@@ -9,8 +9,11 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal",
-            "args" : ["Cassiopeia"]
+           // "console": "integratedTerminal",
+            "console": "externalTerminal",
+            //"args" : ["Tristana"]
+            //"args" : ["Cassiopeia"]
+            "args" : ["Sett", "Black Cleaver", "Trinity Force"]
         }
     ]
 }
