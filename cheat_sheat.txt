@@ -21,6 +21,9 @@ This is a text that just holds some information about some variable names in DDr
 'attackspeedperlevel'
 'attackspeed'
 
+//THIS ABOVE STATS ARE THE ONES THAT CAN BE MODIFIED/CHANGED VIA PER LEVEL INCREASES WITHOUT ITEMS MODIEFIEERS, we will call these "base stats"
+
+
 Different stats have diffetent wayts to round the values:
 AD, Heath and Energy Regen all round to the ones place
 AS rounds to the hundreth place, 
@@ -41,3 +44,7 @@ PercentMovementSpeedMod
 FlatHPPoolMod
 FlatMPPoolMod
 PercentAttackSpeedMod
+
+
+There is no real field or bool that tell you if an item's rarity: However in the description for MYTHICS items: <br><br><rarityMythic>Mythic is added therefore we can use this as a way to check
+if an item is MYTHIC OR NOT
