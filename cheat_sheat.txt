@@ -1,0 +1,50 @@
+This is a text that just holds some information about some variable names in DDragon or any thing else:
+ DDragon information for champion stats
+'hp'
+'hpperlevel'
+ mp'
+'mpperlevel'
+'movespeed'
+'armor'
+'armorperlevel'
+'spellblock'
+'spellblockperlevel'
+'attackrange'
+'hpregen'
+'hpregenperlevel'
+'mpregen': 
+'mpregenperlevel'
+'crit'
+'critperlevel':
+'attackdamage'
+'attackdamageperlevel'
+'attackspeedperlevel'
+'attackspeed'
+
+//THIS ABOVE STATS ARE THE ONES THAT CAN BE MODIFIED/CHANGED VIA PER LEVEL INCREASES WITHOUT ITEMS MODIEFIEERS, we will call these "base stats"
+
+
+Different stats have diffetent wayts to round the values:
+AD, Heath and Energy Regen all round to the ones place
+AS rounds to the hundreth place, 
+Both of this applies to the initial values (level 1) as well
+
+
+Calculations:
+-Attack Speed, calculating attack speed is diffetent because it has a ration that is followed per level: 
+    -To calculate it you take the attackspeedperlevel (aspl) value multiply it by the champion level-1 (cpl) (we -1 because we start a level 1 not level 0) multiply by the level 1 attack speed (as)
+    - divide but 100 then readd the original lvl 1 attack speed : ((aspl*cpl)*as)/100 + as
+
+
+DDragon Items Stats Naming Conventions:
+Stats are called flat if you add them together, and percent if you multiply them together.
+
+FlatPhysicalDamageMod
+PercentMovementSpeedMod
+FlatHPPoolMod
+FlatMPPoolMod
+PercentAttackSpeedMod
+
+
+There is no real field or bool that tell you if an item's rarity: However in the description for MYTHICS items: <br><br><rarityMythic>Mythic is added therefore we can use this as a way to check
+if an item is MYTHIC OR NOT
