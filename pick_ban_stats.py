@@ -131,13 +131,12 @@ tournaments = lp.get_tournaments(region, 2021)
 Check_Tournaments(tournaments)
 for i in tournaments:
     if i['name'] == tournament_name:
-        print(lp.get)
-        #tournament_games = lp.get_games(i['overviewPage'])
+        tournament_games = lp.get_games(i['overviewPage'])
 
-#for game in tqdm (range(len(tournament_games)), desc="In Progress"):
-    #Get_Picks_And_Bans(lp.get_game_details(tournament_games[game])['picksBans'])
+for game in tqdm (range(len(tournament_games)), desc="In Progress"):
+    Get_Picks_And_Bans(lp.get_game_details(tournament_games[game])['picksBans'])
 
 
-#with open(FILE_PATH+tournament_name+"_PickBan.json", "w") as outfile:  
-    #json.dump(pb_json, outfile) 
+with open(FILE_PATH+tournament_name+"_PickBan.json", "w") as outfile:  
+    json.dump(pb_json, outfile) 
 ##############################################   MAIN   ############################################## 
