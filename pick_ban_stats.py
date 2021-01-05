@@ -1,13 +1,8 @@
 ##############################################   GLOBALS/IMPORTS   ############################################## 
-from lol_dto.classes import game
-import requests
 import sys
-import pandas as pd
-import numpy as np
 import leaguepedia_parser as lp
-import matplotlib as plt
 import json
-import os
+import global_functions as gf
 from tqdm import tqdm 
 
 FILE_PATH = 'pb_files/'
@@ -44,20 +39,16 @@ Pick_Ban_Positions_Strings = {
 
 ##############################################   FUNCTIONS   ############################################## 
 
-def Check_Tournaments(_tournaments):
-    if len(_tournaments ) <= 0:
-        sys.exit('ERROR: The inputted parameters returned no tournaments, Check the spelling!!!!')
- 
 
 def Get_Picks_And_Bans(_game, _blue_team, _red_team):
     pbPosition = 0
     for champ in _game:
         #print(champ['championName'] + " is Ban: " + str(champ['isBan'])  + ' Side: ' + champ['team'] + " POS: " + str(pbPosition))
-        #Does the data entry for the champion entry without team information
+      
         if champ["championName"] not in pb_json['overall'].keys():
             Add_Champion_Information_No_Team(True, champ)
         else:
-            Add_Champion_Information_No_Team(False, champ)
+            Add_Champion_Information_No_Team(False, champ)  #Does the data entry for the champion entry without team information
         pb_json['overall'][champ["championName"]]['Details'][Get_Draft_Position_String(pbPosition)] += 1       
 
         #before we add a champion to a team we need to know which team to add to
@@ -234,16 +225,11 @@ def Verify_Team_Name(_name):
 region = sys.argv[1].split(",")[0].strip()
 tournament_name = sys.argv[1].split(",")[1].strip()
 tournament_games = []
-#print(region)
-#print(tournament_name)
-#print(champion_name)
-#print(lp.get_regions())
-tournaments = lp.get_tournaments(region, 2020) 
-#print(tournaments)
-Check_Tournaments(tournaments)
-for i in tournaments:
-    if i['name'] == tournament_name:
-        tournament_games = lp.get_games(i['overviewPage'])
+tournaments = lp.get_tournaments(region, 2021) 
+gf.Check_Tournaments(tournaments)
+tournament_games = gf.Get_Tournament_Games(tournaments, tournament_name)
+
+
 for i in tqdm (range(len(tournament_games)), desc="In Progress"):
     #some tournament sometimes do a blind pick first match in a series and therefore there is no pick ban for this, however every subsequent games does there fore we need to skip this games 
     #but also tell the user why we skipped

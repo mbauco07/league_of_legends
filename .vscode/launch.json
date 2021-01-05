@@ -13,6 +13,7 @@
             "console": "externalTerminal",
             //"args" : ["Tristana"]
             //"args" : ["Cassiopeia"]
+            //"args" : ["Korea, KeSPA Cup 2020"]
             "args" : ["China, Demacia Cup 2020"]
             //"args" : "["Sett", "Black Cleaver", "Trinity Force"]"
          }
