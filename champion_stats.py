@@ -1,7 +1,7 @@
 #This script will ask for a champ or champs and will get their stats, stats per level, etc and then compare build with items included.
 
 
-import keys as ks
+#import keys as ks
 import deprecated_functions as dep_funcs
 import special_scaling_values as ssv
 import requests
@@ -11,7 +11,6 @@ from prettytable import PrettyTable
 from prettytable import from_csv
 import pandas as pd
 import numpy as np
-from bs4 import BeautifulSoup as bs
 import random
 import os
 import leaguepedia_parser as lp
