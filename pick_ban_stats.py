@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Mar  1 13:29:57 2021
 
-@author: Marco Bauco
-@about: Will create a json object and save it to a file that holds all information pertanining to a leagues and its teams pick bans data.
-"""
+#Created on Mon Mar  1 13:29:57 2021
+
+#@author: Marco Bauco
+#about: Will create a json object and save it to a file that holds all information pertanining to a leagues and its teams pick bans data.
+#
 ##############################################   GLOBALS/IMPORTS   ############################################## 
 import sys
 import leaguepedia_parser as lp
@@ -48,6 +48,7 @@ Pick_Ban_Positions_Strings = {
 
 
 def Get_Picks_And_Bans(_game, _blue_team, _red_team, win_side_colour):
+    print("game"  + str(_game))
     pbPosition = 0
     for champ in _game:
         #print(champ['championName'] + " is Ban: " + str(champ['isBan'])  + ' Side: ' + champ['team'] + " POS: " + str(pbPosition))
@@ -55,21 +56,15 @@ def Get_Picks_And_Bans(_game, _blue_team, _red_team, win_side_colour):
         if champ["championName"] not in pb_json['overall'].keys():
             Add_Champion_Information_No_Team(True, champ)
         else:
-<<<<<<< Updated upstream
             Add_Champion_Information_No_Team(False, champ)  #Does the data entry for the champion entry without team information
-        pb_json['overall'][champ["championName"]]['Details'][Get_Draft_Position_String(pbPosition)] += 1       
-
-=======
-            Add_Champion_Information_No_Team(False, champ)
-        #we also to make sure that we don;t have redudant empty space we will only add pertinant information
+            
+        #add a champion pick/ban position overall
         if Get_Draft_Position_String(pbPosition) in pb_json['overall'][champ["championName"]]['Details'].keys():
-            pb_json['overall'][champ["championName"]]['Details'][Get_Draft_Position_String(pbPosition)] += 1       
+           pb_json['overall'][champ["championName"]]['Details'][Get_Draft_Position_String(pbPosition)] += 1       
         else:
-            pb_json['overall'][champ["championName"]]['Details'][Get_Draft_Position_String(pbPosition)] = 1     
-       #also add a win if necessary     
-        if champ['team'] == win_side_colour:
-            pb_json['overall'][champ["championName"]]['Wins'] += 1
->>>>>>> Stashed changes
+            pb_json['overall'][champ["championName"]]['Details'][Get_Draft_Position_String(pbPosition)] = 1    
+   
+
         #before we add a champion to a team we need to know which team to add to
         if "Blue" in Get_Draft_Position_String(pbPosition):
             #add to the side on blue side
@@ -192,23 +187,22 @@ def Verify_Team_Name(_name):
 region = sys.argv[1].split(",")[0].strip()
 tournament_name = sys.argv[2]
 tournament_games = []
-<<<<<<< Updated upstream
 tournaments = lp.get_tournaments(region, 2021) 
 gf.Check_Tournaments(tournaments)
 tournament_games = gf.Get_Tournament_Games(tournaments, tournament_name)
 
 
-=======
 #print(region)
 #print(tournament_name)
 #print(champion_name)
 #print(lp.get_regions())
-tournaments = lp.get_tournaments(region, 2021) 
-Check_Tournaments(tournaments)
+#tournaments = lp.get_tournaments(region, 2021) 
+#print(tournaments)
+gf.Check_Tournaments(tournaments)
 for i in tournaments:
     if i['name'] == tournament_name:
         tournament_games = lp.get_games(i['overviewPage'])
->>>>>>> Stashed changes
+#print(tournament_games)
 for i in tqdm (range(len(tournament_games)), desc="In Progress"):
     #some tournament sometimes do a blind pick first match in a series and therefore there is no pick ban for this, however every subsequent games does there fore we need to skip this games 
     #but also tell the user why we skipped

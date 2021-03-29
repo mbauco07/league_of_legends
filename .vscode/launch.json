@@ -13,12 +13,8 @@
             "console": "externalTerminal",
             //"args" : ["Tristana"]
             //"args" : ["Cassiopeia"]
-<<<<<<< Updated upstream
-            //"args" : ["Korea, KeSPA Cup 2020"]
-            "args" : ["China, Demacia Cup 2020"]
-=======
-            "args" : ["North America, Demacia Cup 2020"]
->>>>>>> Stashed changes
+            "args" : ["North America", "LCS 2021 Mid-Season Showdown"]
+           // "args" : ["China, Demacia Cup 2020"]
             //"args" : "["Sett", "Black Cleaver", "Trinity Force"]"
          }
     ]
