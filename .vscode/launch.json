@@ -13,7 +13,8 @@
             "console": "externalTerminal",
             //"args" : ["Tristana"]
             //"args" : ["Cassiopeia"]
-            "args" : ["China, Demacia Cup 2020"]
+            "args" : ["North America", "LCS 2021 Mid-Season Showdown"]
+           // "args" : ["China, Demacia Cup 2020"]
             //"args" : "["Sett", "Black Cleaver", "Trinity Force"]"
          }
     ]
