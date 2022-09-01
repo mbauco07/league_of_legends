@@ -1,3 +1,5 @@
+PAST WORK DONE FOR LoL I have switched to https://github.com/mbauco07/League-V2 as my main repository.
+
 # league_of_legends
 
 Other Personal Projects that I have working on can be seen on my Github: https://github.com/mbauco07
